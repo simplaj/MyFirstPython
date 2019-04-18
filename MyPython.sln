@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28809.33
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MyPython", "MyPython.pyproj", "{7817AE2D-5067-4FB9-87F3-138D03AB35F4}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PM2.5predict", "PM2.5predict.pyproj", "{7817AE2D-5067-4FB9-87F3-138D03AB35F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
