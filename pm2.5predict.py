@@ -18,11 +18,10 @@ for month in range(12):
             sample[:,day * 24 + hour] = data[18 * (month * 20 + day): 18 * (month * 20 + day + 1),hour]
     month_to_data[month] = sample 
 
-
+## 预处理
 x = np.empty(shape = (12 * 471 , 18 * 9),dtype = float)
 y = np.empty(shape = (12 * 471 , 1),dtype = float)
 
-## 预处理
 for month in range(12): 
     for day in range(20): 
         for hour in range(24):   
