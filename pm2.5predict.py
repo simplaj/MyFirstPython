@@ -5,9 +5,9 @@ import csv
 
 ## 读入训练集
 raw_data = np.genfromtxt('train.csv', delimiter=',') ## train.csv
-data = raw_data[1:,3:]
-where_are_NaNs = np.isnan(data)
-data[where_are_NaNs] = 0 
+data = raw_data[1:,3:]  ## 舍弃前一行和前三列
+where_are_NaNs = np.isnan(data) ## 处理非数字字符
+data[where_are_NaNs] = 0  ## 将非数字字符置为零
 
 month_to_data = {}  ## Dictionary (key:month , value:data)                                  
 
@@ -31,7 +31,7 @@ for month in range(12):
             y[month * 471 + day * 24 + hour,0] = month_to_data[month][9 ,day * 24 + hour + 9]
 
 ## 正常化
-mean = np.mean(x, axis = 0) 
+mean = np.mean(x, axis = 0) ## 压缩矩阵
 std = np.std(x, axis = 0)
 for i in range(x.shape[0]):
     for j in range(x.shape[1]):
