@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import csv
 
-raw_data = np.genfromtxt(sys.argv[1], delimiter=',') ## train.csv
+raw_data = np.genfromtxt('train.csv', delimiter=',') ## train.csv
 data = raw_data[1:,3:]
 where_are_NaNs = np.isnan(data)
 data[where_are_NaNs] = 0 
@@ -55,7 +55,7 @@ np.save('weight.npy',w)     ## save weight
 
 
 w = np.load('weight.npy')                                   ## load weight
-test_raw_data = np.genfromtxt(sys.argv[2], delimiter=',')   ## test.csv
+test_raw_data = np.genfromtxt('test.csv', delimiter=',')   ## test.csv
 test_data = test_raw_data[:, 2: ]
 where_are_NaNs = np.isnan(test_data)
 test_data[where_are_NaNs] = 0 
@@ -75,7 +75,7 @@ test_x = np.concatenate((np.ones(shape = (test_x.shape[0],1)),test_x),axis = 1).
 answer = test_x.dot(w)
 
 
-f = open(sys.argv[3],"w")
+f = open('out.csv',"w")
 w = csv.writer(f)
 title = ['id','value']
 w.writerow(title) 

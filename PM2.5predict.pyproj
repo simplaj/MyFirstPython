@@ -29,6 +29,9 @@
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="out.csv">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="test.csv" />
     <Content Include="train.csv" />
   </ItemGroup>
